@@ -71,7 +71,7 @@ function layoutForViewport() {
 
   if (isMobile) {
     phone.position.x = 0
-    phoneBaseY = 0.3
+    phoneBaseY = 0.45
     phone.scale.setScalar(1.25)
   } else {
     phone.position.x = 1.35
