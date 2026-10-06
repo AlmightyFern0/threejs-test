@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Honey — img2threejs</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="scene"></canvas>
+
+      <div class="top-row">
+        <button id="mute-toggle" class="mute-toggle" type="button" aria-label="Mute">
+          <img id="mute-icon" src="/icons/mute.png" alt="" />
+        </button>
+
+        <header class="caption">
+          Just a threejstest by <strong><a href="https://lorenzomarcomin.com" target="_blank" rel="noopener noreferrer">Lorenzo Marcomin</a></strong> using
+          <strong><a href="https://github.com/img2threejs/img2threejs" target="_blank" rel="noopener noreferrer">img2threejs</a></strong>
+        </header>
+      </div>
+
+      <main class="hero-copy">
+        <h1>Honey</h1>
+        <p>
+          Let the brightest place be your passion, let go of your doubt. It's easier said than
+          done I know, but Robyn's saying that, trust her words.
+        </p>
+      </main>
+
+      <div id="spotify-embed-wrap" class="spotify-embed">
+        <div id="spotify-embed"></div>
+      </div>
+    </div>
+
+    <script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
