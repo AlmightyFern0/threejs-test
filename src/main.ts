@@ -57,7 +57,12 @@ phone.rotation.set(0.05, BASE_ROTATION_Y, BASE_ROTATION_Z)
 scene.add(phone)
 phone.updateMatrixWorld(true)
 
-const MOBILE_BREAKPOINT = 760
+const MOBILE_BREAKPOINT = 1050
+
+// The animate() loop sets phone.position.y every frame (see applyFloatWobble
+// below), so setting phone.position.y here would just be overwritten on the
+// next frame. This is the actual value that feeds the wobble instead.
+let phoneBaseY = 0
 
 function layoutForViewport() {
   const isMobile = window.innerWidth <= MOBILE_BREAKPOINT
@@ -66,12 +71,12 @@ function layoutForViewport() {
 
   if (isMobile) {
     phone.position.x = 0
-    phone.position.y = 0
-    phone.scale.setScalar(1)
+    phoneBaseY = 0.2
+    phone.scale.setScalar(1.25)
   } else {
     phone.position.x = 1.35
-    phone.position.y = 0.1
-    phone.scale.setScalar(1)
+    phoneBaseY = 0.1
+    phone.scale.setScalar(1.5)
   }
 }
 
@@ -125,7 +130,7 @@ function animate() {
   requestAnimationFrame(animate)
   const elapsed = (performance.now() - startTime) / 1000
   applyFloatWobble(phone, elapsed, {
-    baseY: phone.position.x === 0 ? 0 : 0.1,
+    baseY: phoneBaseY,
     baseRotationX: 0.05,
     baseRotationY: BASE_ROTATION_Y,
     baseRotationZ: BASE_ROTATION_Z,

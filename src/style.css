@@ -38,7 +38,8 @@ html,
 body {
   margin: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  overflow: hidden;
   background: var(--bg);
   color: var(--ink);
   font-family: 'Untitled Sans', system-ui, sans-serif;
@@ -48,7 +49,7 @@ body {
 #app {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
 }
 
 #scene {
@@ -77,10 +78,11 @@ body {
 }
 
 .hero-copy {
-  position: absolute;
+  position: fixed;
   left: var(--edge);
   bottom: var(--edge);
   max-width: 360px;
+  bottom: 30px;;
 }
 
 .hero-copy h1 {
@@ -98,7 +100,7 @@ body {
 }
 
 .mute-toggle {
-  position: absolute;
+  position: fixed;
   right: var(--edge);
   bottom: var(--edge);
   width: 28px;
@@ -135,14 +137,13 @@ body {
   #app {
     display: flex;
     flex-direction: column;
-    height: 100vh;
   }
 
   #scene {
     position: relative;
     inset: auto;
     width: 100%;
-    height: 40vh;
+    height: 62vh;
   }
 
   .top-row {
@@ -166,8 +167,9 @@ body {
   }
 
   .hero-copy {
-    position: static;
+    position: fixed;
     margin: 16px var(--edge) 0;
+    bottom: 30px;
     max-width: none;
   }
 
